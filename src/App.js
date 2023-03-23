@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const focusPoint = useRef();
+  const onClickHandler = () =>
+  focusPoint.current.style.backgroundColor = prompt("enter a colour")
+  
+    
+    return (
+      <>
+    <div className="wrapper">
+      <div ref={focusPoint} className="box">
+        <button className="btn" onClick={onClickHandler}>
+          change colour
+        </button>
+      </div>
+     
     </div>
-  );
+  </>
+);
 }
 
 export default App;
